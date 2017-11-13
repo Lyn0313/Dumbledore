@@ -12,6 +12,7 @@ const Table = ({ data, fetchStudents, selectable }) => {
       <STable.Cell>{first.point}</STable.Cell>
     </STable.Row>
   ) : '';
+
   const secondRow = second ? (
     <STable.Row onClick={() => fetchStudents(second.id)}>
       <STable.Cell><Label className="second-ribbon" ribbon color="grey">2st</Label></STable.Cell>
@@ -19,6 +20,7 @@ const Table = ({ data, fetchStudents, selectable }) => {
       <STable.Cell>{second.point}</STable.Cell>
     </STable.Row>
   ) : '';
+
   const thirdRow = third ? (
     <STable.Row onClick={() => fetchStudents(third.id)}>
       <STable.Cell><Label className="third-ribbon" ribbon color="brown">3rd</Label></STable.Cell>
@@ -26,6 +28,8 @@ const Table = ({ data, fetchStudents, selectable }) => {
       <STable.Cell>{third.point}</STable.Cell>
     </STable.Row>
   ) : '';
+
+  
   const Etc = data.slice(3).map((el, idx) => {
     return (
       <STable.Row key={el.id} onClick={() => fetchStudents(el.id)}>
